@@ -2,7 +2,7 @@ import { ChangeEvent, useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { ProductInCart } from '../../components/ProductInCart';
 import { IProductInCart } from '../../interfaces/productCart.interface';
-import { formatPrice } from '../../utils/formatPrice';
+import { convertToReais } from '../../utils/formatPrice';
 import { makeRequest } from '../../utils/makeRequest';
 import styles from './cart.module.css';
 
@@ -26,7 +26,7 @@ export function Cart(): JSX.Element {
       (acc: number, product: IProductInCart) =>
         acc + product.price * product.quantity
       , 0);
-    setTotal(formatPrice(total));
+    setTotal(convertToReais(total));
   }
 
   async function updateQuantityProductInCart(
