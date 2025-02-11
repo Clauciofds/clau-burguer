@@ -1,7 +1,7 @@
 import drinksImage from '../../assets/coca-cola.png';
 import hamburgerImage from '../../assets/hamburger.png';
 import { ProductInCartProps } from '../../interfaces/productCart.interface';
-import { formatPrice } from '../../utils/formatPrice';
+import { convertToReais } from '../../utils/formatPrice';
 import styles from './productInCart.module.css';
 
 export function ProductInCart({ item, deleteItem, updateQuantityProductInCart }: Readonly<ProductInCartProps>): JSX.Element {
@@ -29,7 +29,7 @@ export function ProductInCart({ item, deleteItem, updateQuantityProductInCart }:
           </h3>
 
           <h2 className={styles.productInCart__price}>
-            {formatPrice(price)}
+            {convertToReais(price)}
           </h2>
         </div>
       </div>
