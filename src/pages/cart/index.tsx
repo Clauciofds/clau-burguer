@@ -34,7 +34,7 @@ export function Cart(): JSX.Element {
     productInCart: IProductInCart) {
     const quantity = event.target.value;
     await makeRequest(`/cart/${productInCart.id}`, 'PUT', {
-      ...ProductInCart,
+      ...productInCart,
       quantity: Number(quantity)
     });
 

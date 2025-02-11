@@ -13,3 +13,17 @@
   - [x] Listar os produtos no carrinho
   - [x] excluir produto
   - [x] alterar quantidade do produto
+
+
+  # Arquivo deve ser criado se apresentar erro no netlify.com
+
+  - Nome: `netlify.tom`
+    - Conteúdo:
+      
+      ```ts
+      [[redirects]]
+        from = "/*"
+        to = "/index.html"
+        status = 200
+        force = false
+        ```
