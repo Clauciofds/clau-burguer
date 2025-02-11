@@ -38,7 +38,7 @@ export function Cart(): JSX.Element {
       quantity: Number(quantity)
     });
 
-    const newProductsInCart = productsInCart.filter(product => {
+    const newProductsInCart = productsInCart.map(product => {
       if (product.id === productInCart.id) {
         product.quantity = Number(quantity);
       }
